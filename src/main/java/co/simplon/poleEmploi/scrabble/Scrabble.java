@@ -55,8 +55,11 @@ public class Scrabble {
 	}
 
 	public int getValeur(String string) {
-		
-		return 0;
+		int valeur = 0;
+		for (char c : string.toCharArray()) {
+			valeur += this.getValeur(c);
+		}
+		return valeur;
 	}
 
 	public String getLettresDeValeur(int i) {
